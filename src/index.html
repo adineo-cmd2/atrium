@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atrium — ten rooms, one door</title>
+    <meta
+      name="description"
+      content="Atrium is the shared entrance to ten separate reasoning instruments. One front door, ten independent backends, databases, and memories."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/_portal/portal.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#index">Skip to the index</a>
+
+    <header class="masthead">
+      <a class="wordmark" href="/" aria-label="Atrium, the front door">
+        <span class="wordmark-mark" aria-hidden="true">{{MARK}}</span>
+        <span class="wordmark-name">Atrium</span>
+      </a>
+      <p class="masthead-note">A shared entrance to ten separate apps</p>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-top">
+          <h1 id="hero-title">Ten rooms.<br />One door.</h1>
+          <div class="hero-side">
+            <p class="hero-kicker">A shared entrance</p>
+            <p class="hero-lede">
+              Ten reasoning instruments, built as separate apps. Atrium gives them one
+              entrance and nothing else: no shared database, no combined search, no
+              cross-app memory.
+            </p>
+            <p class="hero-note">Ten repositories. Ten builds. One address.</p>
+          </div>
+        </div>
+
+        <nav class="spectrum" aria-label="Quick room index">
+          {{SPECTRUM}}
+        </nav>
+      </section>
+
+      <section class="index" id="index" aria-labelledby="index-title">
+        <div class="section-head">
+          <h2 id="index-title">The index</h2>
+          <p>Open a room. It keeps its own data.</p>
+        </div>
+        <ol class="rooms">
+          {{ROOMS}}
+        </ol>
+      </section>
+
+      <section class="boundary" aria-labelledby="boundary-title">
+        <div class="boundary-rule" aria-hidden="true">{{BOUNDARY_BARS}}</div>
+        <div class="boundary-head">
+          <h2 id="boundary-title">What is not shared</h2>
+          <p>
+            The doorway is the only common thing. Everything behind each door stays
+            there.
+          </p>
+        </div>
+        <div class="boundary-grid">
+          <article>
+            <h3>Backends</h3>
+            <p>
+              Each room runs its own FastAPI process on its own port, from
+              <code>8001</code> to <code>8010</code>. Atrium does not proxy them.
+            </p>
+          </article>
+          <article>
+            <h3>Databases</h3>
+            <p>
+              Every repo keeps its own SQLite file. The build copies only the
+              frontend's <code>dist/</code> tree; no database or <code>.env</code>
+              enters the site.
+            </p>
+          </article>
+          <article>
+            <h3>Memory</h3>
+            <p>
+              No combined search index, no cross-app cookies, no shared progress
+              store. Only one app saves a key in local storage, under its own name.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Assembled from ten independent repositories in
+        <a href="https://github.com/adineo-cmd2">adineo-cmd2</a>.
+        <span class="footer-stamp">{{BUILD_STAMP}}</span>
+      </p>
+      <p class="footer-count">{{TOTAL_PAGES}} pages across {{APP_COUNT}} rooms.</p>
+    </footer>
+  </body>
+</html>

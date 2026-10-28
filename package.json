@@ -1,0 +1,17 @@
+{
+  "name": "atrium",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A shared front door for ten separate reasoning instruments.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:fast": "node scripts/build.mjs --skip-build",
+    "start": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
